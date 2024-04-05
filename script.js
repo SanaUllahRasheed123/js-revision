@@ -219,3 +219,16 @@
 //   console.log("At least Run Time", j);
 //   j++;
 // } while (j < 1);
+
+//if , else, else if  statements
+// let budjet = 3500;
+
+// if (budjet > 6000) {
+//   console.log("Will do dinner in hotel");
+// } else if (budjet > 5000) {
+//   console.log("Will do dinner in 3 star hotel");
+// } else if (budjet > 3000) {
+//   console.log("Will do dinner in 2 start hotel");
+// } else {
+//   console.log("Run if All the conditions are false");
+// }
