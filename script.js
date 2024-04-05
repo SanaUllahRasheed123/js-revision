@@ -166,3 +166,56 @@
 // console.log(dishes.pop());
 
 // ***************************************Flow Control*88888888888888888888888888888888888888888
+
+//Control Flow
+//For Loops
+
+//Run the Specific task 10 times
+
+//without for loop
+
+// console.log("Run the task");
+
+// console.log("Run");
+// console.log("Run");
+// console.log("Run");
+// console.log("Run");
+// console.log("Run");
+// console.log("Run");
+
+// for (let i = 0; i < 200; i++) {
+//   console.log("The run time", i);
+// }
+
+// let dishes = ["Biryani", "Chana-Chat", "Bhally", "Pani-Pori"];
+
+//Access the array values
+
+// for (let i = 0; i < dishes.length; i++) {
+//   console.log(dishes[i]);
+// }
+
+// let j = 1;
+// while (j <= 6) {
+//   // Get Error Conditional Statement is mandatory
+//   console.log("While loop", j);
+//   j++;
+// }
+
+//While Loopp
+
+// let dishes = ["Biryani", "Chat-chana", "Bhally", "Karahi"];
+
+// let j = 0;
+// while (j < dishes.length) {
+//   console.log("Favourite Dish", dishes[j]);
+//   j++; // without this statement we will get infinite loop
+// }
+
+//Do While Loop
+
+// let j = 1;
+// do {
+//   console.log("At least Run Time", j);
+//   j++;
+// } while (j < 1);
