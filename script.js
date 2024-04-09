@@ -207,6 +207,7 @@
 // let dishes = ["Biryani", "Chat-chana", "Bhally", "Karahi"];
 
 // let j = 0;
+
 // while (j < dishes.length) {
 //   console.log("Favourite Dish", dishes[j]);
 //   j++; // without this statement we will get infinite loop
@@ -232,3 +233,258 @@
 // } else {
 //   console.log("Run if All the conditions are false");
 // }
+
+// break and Continue
+//Aslo called jumm statement
+
+//Continue Statement
+//used to skip some values of loop
+// console.log("heh");
+
+// for (i = 1; i <= 10; i++) {
+//   if (i == 5) {
+//     continue; //Move towards the next iteration
+//   }
+//   console.log("i =", i);
+// }
+
+//Break statement
+
+//used to terminate the loop and control transform from outside the loop
+
+// for (let i = 1; i < 10; i++) {
+//   if (i == 5) {
+//     console.log("Our desired value is =", i);
+//     break;
+//   }
+//   console.log("The value of i = ", i);
+// }
+
+//Logical Operators
+
+// And && , Or || , Not !
+
+// let password = "qwerty@";
+
+// if (password.length > 5 && password.includes("@")) {
+//   console.log("Password is strong");
+// } else {
+//   console.log("You have a weak password");
+// }
+
+// let password = "qwerty@";
+
+// if (password.length > 3 || password.includes("@")) {
+//   console.log("Give true if only one true");
+// } else {
+//   console.log("You have a weak password");
+// }
+
+// Not operator ! true to false and false to true
+
+// const hello = true;
+
+// if (!hello) {
+//   console.log("h", hello);
+// }
+
+// Priorities
+// Not , And , OR left to Right
+
+// Example
+// let result = (true && true) || (false && !false);
+
+// result = (true && true) || (false && true);
+// result = true || (false && true);
+// result = true ||true;
+// console.log(result);
+
+//Variables and Block Scope
+
+//scope >> - Area Where variable is defined or accessible
+//only let and const make the block scope
+
+// let score = 90; //Global Scope
+
+// if (true) {
+//   let score = 58; //block scope
+//   console.log("The value of score is", score);
+// }
+
+// console.log(score);
+
+//Terniary Operator ( ? : )
+
+// age = 20;
+// if (age > 20) {
+//   console.log("Qualify");
+// } else {
+//   console.log("Fail");
+// }
+
+// let age = 18;
+
+// let result = (age) => (18 ? "Qualify" : "Fail");
+// console.log(result);
+
+// let age = 19;
+// let weight = 60;
+
+// let result =
+//   age > 20 ? (weight > 89 ? "Qualify" : "Age Issue") : "Weight Issue";
+// console.log(result);
+
+//it is used in competetive of "Conditional " statement
+
+// let currentDate = new Date();
+
+// let weekDay = currentDate.getDay();
+// console.log(weekDay);//0 to 6
+
+// switch statement
+// let age = 16;
+
+// switch (age) {
+//   case 15:
+//   case 16:
+//   case 17:
+// result = "These ages are  allowed to sit in the exam";
+//   default:
+//     result = "Not allowed";
+// }
+
+//If there is no break statement "next" case will be executed
+// console.log(result);
+
+// *************************************** Ch#3. Functions *88888888888888888888888888888888888888888
+
+// It is simply a piece of code which we can use in our program many times
+// it is just like a variable holding some piece of code
+
+//Declaration
+
+// function nameOfFunction(x, y) {
+//   console.log("You are running code present inside the function");
+//
+// }
+
+//function call
+// nameOfFunction();
+// nameOfFunction();
+// nameOfFunction();
+
+//Also called Anonymous function given below.
+// let fun = function () {
+//   console.log("This is another example of function expression");
+// };
+
+//Caliing function expression
+// fun();
+// fun();
+
+//passing values (Arguments and Parameters)
+
+// let invitation = function (name = "defaultValue", time = "defaultTime") {
+//   // local variable to this
+//   console.log(`Welcome ${name} you are invited at our event at ${time}`);
+// };
+// invitation("sanaullah", "Morning");
+// invitation("UbaidUllah", "Afternoon");
+// invitation("sanaullah");
+
+//How to returning values(how to return vlaue from the function)
+
+// let ageCalcaulation = function (birthYear) {
+//   let age = 2024 - birthYear;
+//   console.log(`Your current age is = ${age}`);
+// };
+
+// ageCalcaulation(2001);
+
+// let ageCalcaulation = function (birthYear, currentYear) {
+//   let age = currentYear - birthYear;
+//   console.log(`Your current age is = ${age}`);
+// };
+
+// ageCalcaulation(2001, 2024);
+
+// let ageCalcaulation = function (birthYear, currentYear) {
+//   let age = currentYear - birthYear;
+//   return age;
+//   // console.log(`After return satement no code of line will execute`);
+// };
+
+// // console.log(ageCalcaulation(2001, 2005));
+// let functionResult = ageCalcaulation(2005, 2013);
+// console.log(`Your age is = ${functionResult}`);
+
+//Arrow Function(ES6)
+
+//Special form of functions expression
+//It allows us to write function more fast becuse
+//No need to use function keyword
+//No need to use parenthesis() in case of single parameter
+//No need to use return statement if single line of code in function
+
+//Function Expression
+
+// let invitation = function (name) {
+//   console.log(`Welcome ${name} to this event`);
+// };
+
+// invitation("AI");
+
+//Arrow Function
+
+// let invitation = (name) => `Welcome ${name} to this event`;
+
+// console.log(invitation("SanaUllah"));
+
+// //Passing functionas as an Argument(Higher order function example)
+
+// let UpperCase = function (str) {
+//   return str.toUpperCase();
+// };
+
+// let LowerCase = function (str) {
+//   return str.toLowerCase();
+// };
+
+// let transformer = function (str, fun) {
+//   return fun(str);
+// };
+
+// console.log(transformer("Hello", LowerCase));
+
+// ***********************Function returning another Function******
+
+// let complement = function (msg) {
+//   return function (name) {
+//     console.log(`${msg} ${name}`);
+//   };
+// };
+
+// complement("You are good Coder")("Carry");
+
+//2nd Method
+
+// let complemented = complement("You are good Code");
+// complemented("Carry");
+
+//Complement is higher order function
+
+//Function
+
+//Immediately invoked function Expression
+//Executed only once
+//Now this is expression
+
+// (function (name) {
+//   console.log("This function will never use again", name);
+// })("IIFE");
+
+//setTimeOut and setInterval
+
+//setTimeout -> Run Function "Once" after "interval" of time
+//setInterval -> Run function repeatedly, Starting after the
+//interval of time, then repeating.....
