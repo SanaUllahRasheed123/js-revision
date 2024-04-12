@@ -597,16 +597,28 @@ let car = {
 
 //Example
 
-let person = {
-  firstName: "Harry",
-  lastName: "Brook",
-  city: "Bombay",
-  birthyear: 1998,
-  education: "software engineer",
-  getSummary: function () {
-    // return `Harry Brook lived in Delhi. He is software engineer and he is 20 years old`;
-    return `${this.firstName} ${this.lastName} lives in ${this.city} and he  is a  ${this.education}. His age is ${this.birthyear}`;
-  },
-};
+// let person = {
+//   firstName: "Harry",
+//   lastName: "Brook",
+//   city: "Bombay",
+//   birthyear: 1998,
+//   education: "software engineer",
+//   getSummary: function () {
+// return `Harry Brook lived in Delhi. He is software engineer and he is 20 years old`;
+// return `${this.firstName} ${this.lastName} lives in ${this.city} and he  is a  ${this.education}. His age is ${this.birthyear}`;
+// return this;
+//   },
+// };
 
-console.log(person["getSummary"]());
+// console.log(person["getSummary"]());
+// console.log(person.getSummary());
+
+//Step 1 check in which method we use "this" keyword
+//Step 2 Owner of that method(Who is calling those method)
+
+//ForEach method of array
+
+//Its another type of loop which we used to traverse
+//over the array
+
+let dishes = ["Biryani", "Chany", "karahi"];
