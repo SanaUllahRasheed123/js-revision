@@ -621,4 +621,81 @@ let car = {
 //Its another type of loop which we used to traverse
 //over the array
 
-let dishes = ["Biryani", "Chany", "karahi"];
+// let dishes = ["Biryani", "Chany", "karahi"];
+
+//using for loop
+
+// for (let i = 0; i < dishes.length; i++) {
+//   console.log(dishes[i]);
+// }
+
+// console.log("*********");
+// // usign forEach loop
+// dishes.forEach((element) => {
+//   console.log(element);
+// });
+
+//Objects inside array
+
+// let blockList = [
+//   { userName: "John", reason: "Abusive Content" },
+//   { userName: "Paul", reason: "Copyright content" },
+//   { userName: "Modi Sarkar", reason: "palgerism" },
+//   { userName: "Aman", reason: "abusing" },
+// ];
+// console.log(blockList);
+
+// for (let i = 0; i < blockList.length; i++) {
+//   console.log(
+//     `User ${blockList[i].userName} blocked due to follwing reason ${blockList[i].reason}`
+//   );
+// }
+
+// *********Math Objects  4.6 topic**********
+
+//Math object are built in objects in javascript
+
+// console.log(Math);
+
+// let number = 7.4;
+// let result = Math.round(number); // round to nearest integers
+// console.log(result);
+
+// console.log(Math.floor(number)); // round to down
+// console.log(Math.ceil(number)); // round to up
+// console.log(Math.trunc(number)); //remove decimal part
+
+// let random = Math.random();
+// console.log(Math.round(random * 67)); // 1-100
+
+// *********Call, apply and bind  4.7 topic**********
+
+//Function
+//call and apply method
+// we can manually set the value of "this" keyword using "call and apply"
+
+let mainPlane = {
+  airline: "Fly Pakistan",
+  iatacode: "P1",
+  day: "wednesday",
+  bookings: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} Booked Flight on ${this.airline} with ioatcode number ${this.iatacode} and flight number  ${flightNum} on ${this.day}`
+    );
+  },
+};
+
+mainPlane.book(553, "Carlos");
+
+// let mainPlane = {
+//   airline: "PIA",
+//   iatcode: "BS6",
+//   day: "Friday",
+//   bookings: [],
+//   book: function (name, flightNumber) {
+//     `User ${name} booked this flight name ${this.airline} with code ${this.iatcode} on ${this.day} having flight number${flightNumber}`;
+//   },
+// };
+
+// mainPlane.book("Sana Ullah", 3219);
