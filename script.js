@@ -674,28 +674,30 @@ let car = {
 //call and apply method
 // we can manually set the value of "this" keyword using "call and apply"
 
+// let mainPlane = {
+//   airline: "Fly Pakistan",
+//   iatacode: "P1",
+//   day: "wednesday",
+//   bookings: [],
+//   book: function (flightNum, name) {
+//     console.log(
+//       `${name} Booked Flight on ${this.airline} with ioatcode number ${this.iatacode} and flight number  ${flightNum} on ${this.day}`
+//     );
+//   },
+// };
+
+// mainPlane.book(553, "Carlos");
+
 let mainPlane = {
-  airline: "Fly Pakistan",
-  iatacode: "P1",
-  day: "wednesday",
+  airline: "PIA",
+  iatcode: "BS6",
+  day: "Friday",
   bookings: [],
-  book: function (flightNum, name) {
+  book: function (name, flightNumber) {
     console.log(
-      `${name} Booked Flight on ${this.airline} with ioatcode number ${this.iatacode} and flight number  ${flightNum} on ${this.day}`
+      `User ${name} booked this flight name ${this.airline} with code ${this.iatcode} on ${this.day} having flight number${flightNumber}`
     );
   },
 };
 
-mainPlane.book(553, "Carlos");
-
-// let mainPlane = {
-//   airline: "PIA",
-//   iatcode: "BS6",
-//   day: "Friday",
-//   bookings: [],
-//   book: function (name, flightNumber) {
-//     `User ${name} booked this flight name ${this.airline} with code ${this.iatcode} on ${this.day} having flight number${flightNumber}`;
-//   },
-// };
-
-// mainPlane.book("Sana Ullah", 3219);
+mainPlane.book("Sana Ullah", 3219);
