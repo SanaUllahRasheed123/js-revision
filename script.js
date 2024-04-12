@@ -688,16 +688,54 @@ let car = {
 
 // mainPlane.book(553, "Carlos");
 
-let mainPlane = {
-  airline: "PIA",
-  iatcode: "BS6",
-  day: "Friday",
-  bookings: [],
-  book: function (name, flightNumber) {
-    console.log(
-      `User ${name} booked this flight name ${this.airline} with code ${this.iatcode} on ${this.day} having flight number${flightNumber}`
-    );
-  },
-};
+// let mainPlane = {
+//   airline: "PIA",
+//   iatcode: "BS6",
+//   day: "Friday",
+//   bookings: [],
+//   book: function (name, flightNumber) {
+//     console.log(
+//       `User ${name} booked this flight name ${this.airline} with code ${this.iatcode} on ${this.day} having flight number${flightNumber}`
+//     );
+//   },
+// };
 
-mainPlane.book("Sana Ullah", 3219);
+// mainPlane.book("Sana Ullah", 3219);
+
+//bind method
+
+// function greet() {
+//   console.log(`Welcome ${this.firstName} ${this.lastName} on MyCodeAcadmy`);
+// }
+
+// let user = {
+//   firstName: "Neha",
+//   lastName: "Kakar",
+// };
+
+// let greets = greet.bind(user);
+
+// greets();
+
+//"object/arrays" how "reference" are passed to variable
+
+let arr = [1, 2, 3, 4, 5];
+
+let getRef = arr;
+
+getRef[5] = 7;
+getRef.shift();
+
+console.log("original array", arr);
+console.log("get ref array", getRef);
+
+console.log("******");
+
+//pass by value
+
+let getValue = [...arr];
+
+getValue[6] = 89;
+
+console.log("Original", arr);
+console.log("getValue array", getValue);
