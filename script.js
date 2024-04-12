@@ -553,10 +553,60 @@ let car = {
 
 //Delete properties of objects
 
-let obj = {
-  prop1: "value1",
-  prop2: "value2",
-};
-delete obj.prop1;
+// let obj = {
+//   prop1: "value1",
+//   prop2: "value2",
+// };
 
-console.log(obj);
+// let returnValue = delete obj["prop1"];
+// delete obj.prop2;
+// delete obj["prop1"];
+
+//it always return true value
+
+// console.log(obj, returnValue);
+
+//Function vs method
+
+// let ageCalculate = function (birthyear) {
+//   let age = 2024 - birthyear;
+//   console.log(`Current age is = ${age} `);
+// };
+
+// ageCalculate(2001);
+
+// Method >-- It is nothing but object property(key) holding
+// Function as "Value"
+
+// let person = {
+//   ageCalculate: function (birthYear = 2005) {
+//     let age = 2024 - birthYear;
+//     return age;
+//   },
+// };
+
+// console.log(`Current age is ${person.ageCalculate(2001)}`);
+
+//********************this keyword */
+
+//In Each method we have an access of special keyword called
+// "this"
+
+//this keyword represent the oject. "Calling" the "method"
+// in which "this " is "present"
+
+//Example
+
+let person = {
+  firstName: "Harry",
+  lastName: "Brook",
+  city: "Bombay",
+  birthyear: 1998,
+  education: "software engineer",
+  getSummary: function () {
+    // return `Harry Brook lived in Delhi. He is software engineer and he is 20 years old`;
+    return `${this.firstName} ${this.lastName} lives in ${this.city} and he  is a  ${this.education}. His age is ${this.birthyear}`;
+  },
+};
+
+console.log(person["getSummary"]());
