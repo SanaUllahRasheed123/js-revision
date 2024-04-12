@@ -488,3 +488,75 @@
 //setTimeout -> Run Function "Once" after "interval" of time
 //setInterval -> Run function repeatedly, Starting after the
 //interval of time, then repeating.....
+
+//setTimeOut
+
+//setTimeOut(fun|code,delay,arg1,arg2,...)
+
+// function greeting(name) {
+//   console.log(`Welcome ${name} to our event `);
+// }
+
+// setTimeout(greeting, 1000, "sanaullah");
+
+//setInterval(fun|code,delay,arg1,arg2,...)
+
+// setInterval(greeting, 3000, "Hamza");
+
+//  ********************3.9 Hoisting**********************
+//variable "declaration" are "hoisted" toward "top" of their scope
+
+//function Declaration
+
+// test();
+// function test() {
+//   console.log("Hello Programmers");
+// }
+
+// num = 12;
+// var num;
+// console.log(num);
+
+// *************Intruduction to objects in js************\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+let car = {
+  color: "red",
+  model: "2022",
+  company: "Honda",
+};
+// console.log(car);
+
+//accessing the js objects properties
+//two methods
+// console.log(car["model"]);
+// console.log(car.company);
+
+// let propertyName = "company";
+
+// propertyName = "color";
+// propertyName = "company";
+
+// console.log(car[propertyName]);
+// console.log(car.color); // use direct property name
+// console.log(car.propertyName);//not working
+
+// "Modify" the objject
+
+// car.color = "brown";
+// car.company = "suzuki";
+// car["color"] = "blue";
+// console.log(car.color);
+
+// console.log(car[propertyName]);
+// console.log(car[propertyName]);
+// console.log(car.company);
+
+//Delete properties of objects
+
+let obj = {
+  prop1: "value1",
+  prop2: "value2",
+};
+delete obj.prop1;
+
+console.log(obj);
