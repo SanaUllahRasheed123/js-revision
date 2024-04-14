@@ -833,8 +833,8 @@
 
 //other ways to get html elements
 
-let querySelectorElement = document.querySelectorAll('p')
-console.log(querySelectorElement)
+// let querySelectorElement = document.querySelectorAll('p')
+// console.log(querySelectorElement)
 
 // querySelectorElement.forEach(element => {
 //     console.log(element)
@@ -843,8 +843,8 @@ console.log(querySelectorElement)
 
 //Get elements by tagName
 
-let tagNameElements = document.getElementsByTagName('p')
-console.log(tagNameElements)
+// let tagNameElements = document.getElementsByTagName('p')
+// console.log(tagNameElements)
 
 // tagNameElements.forEach(element => {
 //     console.log(element)
@@ -852,11 +852,28 @@ console.log(tagNameElements)
 
 // Get elements by className
 
-let classNameElements = document.getElementsByClassName('coderdost')
+// let classNameElements = document.getElementsByClassName('coderdost')
 
-console.log(classNameElements)
+// console.log(classNameElements)
 
 //  Get elements by Id
 
-let elementById = document.getElementById('coders')
-console.log(elementById)
+// let elementById = document.getElementById('coders')
+// console.log(elementById)
+
+
+// ******************5.4 innerText Vs innerHTML *******************
+
+//Updating and Changing content
+
+//innerText
+let content = document.querySelector('.content')
+console.log(content.innerText)
+
+
+
+
+
+//innerHTML
+// It does not ignore spaces
+console.log(content.innerHTML)
