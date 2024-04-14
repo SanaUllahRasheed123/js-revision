@@ -867,6 +867,7 @@
 //Updating and Changing content
 
 //innerText
+// Retriveve and set content in Plain text
 let content = document.querySelector('.content')
 console.log(content.innerText)
 
@@ -876,4 +877,6 @@ console.log(content.innerText)
 
 //innerHTML
 // It does not ignore spaces
+// Retriveve and set content in HTML formate
+
 console.log(content.innerHTML)
