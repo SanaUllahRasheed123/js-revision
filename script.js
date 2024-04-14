@@ -791,3 +791,72 @@
 
 // for(let key in car)
 // console.log(key)
+// ******************5.1 DOM *******************
+
+// JavaScript DOM (Document Object Model)
+
+//created by browser as the html load into brower
+
+// Browser create object of html called 'document object' 
+
+// In Document object there is model of complete in 
+//tree like structure
+
+// console.log(document.URL) // give the address 
+
+
+// ******************5.2 Query Selector *******************
+
+//Getting html element/s using querySelector/All
+
+//querySelector returns "first element" that match CSS selector
+
+//To get all matched elements we use querySelectorall
+
+// let resultedElement = document.querySelectorAll('p')
+
+// console.log(resultedElement)
+
+// Access element with class
+
+// let resultedElement = document.querySelectorAll('.coderdost')
+
+// console.log(resultedElement)
+
+// Access element with class
+
+// let resultedElement = document.querySelector('#coders')
+
+// console.log(resultedElement)
+
+// ******************5.3 Other ways to access elements *******************
+
+//other ways to get html elements
+
+let querySelectorElement = document.querySelectorAll('p')
+console.log(querySelectorElement)
+
+// querySelectorElement.forEach(element => {
+//     console.log(element)
+// })
+
+
+//Get elements by tagName
+
+let tagNameElements = document.getElementsByTagName('p')
+console.log(tagNameElements)
+
+// tagNameElements.forEach(element => {
+//     console.log(element)
+// })
+
+// Get elements by className
+
+let classNameElements = document.getElementsByClassName('coderdost')
+
+console.log(classNameElements)
+
+//  Get elements by Id
+
+let elementById = document.getElementById('coders')
+console.log(elementById)
