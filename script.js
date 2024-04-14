@@ -869,7 +869,8 @@
 //innerText
 // Retriveve and set content in Plain text
 let content = document.querySelector('.content')
-console.log(content.innerText)
+// console.log(content.innerText)
+content.innerText = "<p>Greate  Coders</p>" // update
 
 
 
@@ -879,4 +880,5 @@ console.log(content.innerText)
 // It does not ignore spaces
 // Retriveve and set content in HTML formate
 
-console.log(content.innerHTML)
+content.innerHTML += "<p>Great Coders</p>"
+// console.log(content.innerHTML)
