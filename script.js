@@ -519,11 +519,11 @@
 
 // *************Intruduction to objects in js************\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-let car = {
-  color: "red",
-  model: "2022",
-  company: "Honda",
-};
+// let car = {
+//   color: "red",
+//   model: "2022",
+//   company: "Honda",
+// };
 // console.log(car);
 
 //accessing the js objects properties
@@ -671,43 +671,43 @@ let car = {
 // *********Call, apply and bind  4.7 topic**********
 
 //Function
-"use strict"
+// "use strict"
 //call and apply method
 // we can manually set the value of "this" keyword using "call and apply"
 
-let mainPlane = {
-  airline: "Fly Pakistan",
-  iatacode: "P1",
-  day: "wednesday",
-  bookings: [],
-  book: function (flightNum, name) {
-    console.log(
-      `${name} Booked Flight on ${this.airline} with ioatcode number ${this.iatacode} and flight number  ${flightNum} on ${this.day}`
-    );
-    this.bookings.push({
-      flightName: `${this.airline}`,
-      name: name,
-      flightNum: `${this.iatacode}${flightNum}`,
-    });
-  },
-};
+// let mainPlane = {
+//   airline: "Fly Pakistan",
+//   iatacode: "P1",
+//   day: "wednesday",
+//   bookings: [],
+//   book: function (flightNum, name) {
+//     console.log(
+//       `${name} Booked Flight on ${this.airline} with ioatcode number ${this.iatacode} and flight number  ${flightNum} on ${this.day}`
+//     );
+//     this.bookings.push({
+//       flightName: `${this.airline}`,
+//       name: name,
+//       flightNum: `${this.iatacode}${flightNum}`,
+//     });
+//   },
+// };
 
-mainPlane.book(553, "Carlos");
-mainPlane.book(733, "SanaUllah");
+// mainPlane.book(553, "Carlos");
+// mainPlane.book(733, "SanaUllah");
 // console.log(mainPlane);
 
 // New airline launched of same group
 
-"use strict"
-let childPlain = {
-  airline: "Child Plain",
-  iatacode: "P230",
-  day:"Friday",
-  bookings: [],
+// "use strict"
+// let childPlain = {
+//   airline: "Child Plain",
+//   iatacode: "P230",
+//   day:"Friday",
+//   bookings: [],
 
-};
+// };
 
-let book = mainPlane.book;
+// let book = mainPlane.book;
 // book(636,"Laeeq"); // book is regular function
 
 
@@ -715,17 +715,17 @@ let book = mainPlane.book;
 //  "this" value is "undefined" at least in strict mode
 // Solution Using "call" method
 
-book.call(childPlain,689,"Zack")
+// book.call(childPlain,689,"Zack")
 
-console.log(childPlain)
+// console.log(childPlain)
 
-book.call(mainPlane,435,"Umar Khan")
-console.log(mainPlane);
+// book.call(mainPlane,435,"Umar Khan")
+// console.log(mainPlane);
 
 //apply method
 
-book.apply(childPlain,[435,"Barira"])
-console.log(childPlain)
+// book.apply(childPlain,[435,"Barira"])
+// console.log(childPlain)
 
 // let mainPlane = {
 //   airline: "PIA",
@@ -778,3 +778,16 @@ console.log(childPlain)
 
 // console.log("Original", arr);
 // console.log("getValue array", getValue);
+
+
+// ****************4.9**************
+// for in Loop (Each iteration return a "key" of object)
+
+// let car = {
+//   model:2022,
+//   color:"Black",
+//   company: "Toyota"
+// }
+
+// for(let key in car)
+// console.log(key)
