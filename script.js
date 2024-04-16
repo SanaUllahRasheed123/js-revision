@@ -888,7 +888,7 @@
 
 
 // getting attribute of element
-let coderDostLink = document.querySelector('a')
+// let coderDostLink = document.querySelector('a')
 // console.log(coderDostLink.getAttribute('href'))
 
 
@@ -899,6 +899,12 @@ let coderDostLink = document.querySelector('a')
 
 // coderDostLink.innerText = "Image to text"
 
-// coderDostLink.setAttribute('href','https://mail.google.com/mail/u/0/#inbox')
-// console.log(coderDostLink.getAttribute('href'))
-// coderDostLink.innerText= "Gmail"
+    // coderDostLink.setAttribute('href','https://mail.google.com/mail/u/0/#inbox')
+    // console.log(coderDostLink.getAttribute('href'))
+    // coderDostLink.innerText= "Gmail"
+
+// ******************5.6 Adding the style *******************
+
+let headingOne = document.querySelector('h1');
+
+headingOne.style.color = "red"
