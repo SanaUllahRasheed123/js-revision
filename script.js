@@ -908,3 +908,11 @@
 let headingOne = document.querySelector('h1');
 
 headingOne.style.color = "red"
+
+let paragraph = document.getElementById('myParagraph')
+
+// function animateParagraph(){
+//     paragraph.classList.add('slide-in-animation')
+// }
+paragraph.style.backgroundColor= "orange"
+// paragraph.style.animation = ''
