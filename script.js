@@ -899,6 +899,6 @@ let coderDostLink = document.querySelector('a')
 
 // coderDostLink.innerText = "Image to text"
 
-coderDostLink.setAttribute('href','https://mail.google.com/mail/u/0/#inbox')
-console.log(coderDostLink.getAttribute('href'))
-coderDostLink.innerText= "Gmail"
+// coderDostLink.setAttribute('href','https://mail.google.com/mail/u/0/#inbox')
+// console.log(coderDostLink.getAttribute('href'))
+// coderDostLink.innerText= "Gmail"
