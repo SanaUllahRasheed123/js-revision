@@ -868,9 +868,9 @@
 
 //innerText
 // Retriveve and set content in Plain text
-let content = document.querySelector('.content')
+// let content = document.querySelector('.content')
 // console.log(content.innerText)
-content.innerText = "<p>Greate  Coders</p>" // update
+// content.innerText = "<p>Greate  Coders</p>" // update
 
 
 
@@ -880,5 +880,25 @@ content.innerText = "<p>Greate  Coders</p>" // update
 // It does not ignore spaces
 // Retriveve and set content in HTML formate
 
-content.innerHTML += "<p>Great Coders</p>"
+// content.innerHTML += "<p>Great Coders</p>"
 // console.log(content.innerHTML)
+
+
+// ******************5.5 getting ad setting the attribute *******************
+
+
+// getting attribute of element
+let coderDostLink = document.querySelector('a')
+// console.log(coderDostLink.getAttribute('href'))
+
+
+// setting thhe attribute of element
+
+// coderDostLink.setAttribute('href','https://www.onlineocr.net/')
+// console.log(coderDostLink.getAttribute('href'))
+
+// coderDostLink.innerText = "Image to text"
+
+coderDostLink.setAttribute('href','https://mail.google.com/mail/u/0/#inbox')
+console.log(coderDostLink.getAttribute('href'))
+coderDostLink.innerText= "Gmail"
