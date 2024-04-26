@@ -84,6 +84,8 @@ let todos = (callback) => {
   request.addEventListener("readystatechange", () => {
     if (request.readyState === 4 && request.status == 200) {
       //   console.log(request, request.responseText);
+      // let data = JSON.parse(request.responseText);
+      // callback(undefined, data); //regular js object
       callback(undefined, request.responseText);
     } else if (request.readyState === 4) {
       //   console.log("Data could not be fetched");
@@ -92,7 +94,8 @@ let todos = (callback) => {
   });
 
   // set up the request
-  request.open("Get", "https://jsonplaceholder.typicode.com/posts");
+  // request.open("Get", "https://jsonplaceholder.typicode.com/posts");
+  request.open("Get", "data.json");
 
   // sending the request
 
@@ -111,3 +114,5 @@ todos((error, Data) => {
 console.log(1);
 console.log(1);
 console.log(1);
+
+//  Extractiing JSON data********11.4
