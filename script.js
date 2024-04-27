@@ -17,8 +17,6 @@
 
 // console.log("fdsjfkj")
 
-
-
 // ******************* 6.2 Regular Expression ***********
 
 // Regular Expression (Regex) for pattern matching
@@ -38,7 +36,6 @@
 // let password = document.querySelector('#password')
 // let passwordPattern = "^(?=.*?[A-Z])(?=.*[a-z])(?=.*?[0-9].{8,}$)"
 
-
 // form.addEventListener('submit',(e)=>{
 //     e.preventDefault();
 //     let passwordValue = password.value
@@ -52,7 +49,6 @@
 //         console.log("Try Again")
 //     }
 // })
- 
 
 // Regular Expression part 2 (Regex)
 
@@ -62,33 +58,92 @@
 
 // Length of username between 6 to 12
 
-let form = document.querySelector('.sign-up-form');
-let user = document.querySelector('#name')
-let password = document.querySelector('#password')
-let userNamePattern = /^[A-Za-z]{6,12}/
+// let form = document.querySelector('.sign-up-form');
+// let user = document.querySelector('#name')
+// let password = document.querySelector('#password')
+// let userNamePattern = /^[A-Za-z]{6,12}/
 
-form.addEventListener('submit',(e)=>{
-    e.preventDefault();
-    let username = user.value;
-    // "test" method return boolean values
-    let result = userNamePattern.test(username)
-    if(result == true){
-        console.log("User is valid")
-    }
-    else{
-        console.log("Username is invalid try Again ")
-    }
-})
+// form.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+//     let username = user.value;
+//     // "test" method return boolean values
+//     let result = userNamePattern.test(username)
+//     if(result == true){
+//         console.log("User is valid")
+//     }
+//     else{
+//         console.log("Username is invalid try Again ")
+//     }
+// })
 
 // Live Feedback
 
-user.addEventListener("keyup",(e)=>{
-    if(userNamePattern.test(e.target.value)){
-        // console.log("Passed")
-        user.setAttribute('class','success')
-    }
-    else{
-        // console.log(("Failed"))
-        user.setAttribute('class','error')
-    }
-})
+// user.addEventListener("keyup",(e)=>{
+//     if(userNamePattern.test(e.target.value)){
+//         // console.log("Passed")
+//         user.setAttribute('class','success')
+//     }
+//     else{
+//         // console.log(("Failed"))
+//         user.setAttribute('class','error')
+//     }
+// })
+
+// OOP
+// Prototype
+//
+// Each object created by "Constructor" function have an access
+// to all 'methods' present inside that 'constructor' prototype
+
+// let Car = function (color, model) {
+// console.log(this);
+// prperties
+// this.color = color;
+// this.model = model;
+
+// this.login = function () {
+//   console.log("this is method function");
+// };
+// };
+
+// METHOD
+
+// Car.prototype.startEngine = function () {
+//   console.log(`This is a start engine method`);
+// };
+
+// we can also set "properties" to prototype
+// Car.prototype.company = "Honda";
+
+// console.log(Car.prototype);
+
+// let instanceOfCar = new Car("black", 2939);
+// let instanceOfCar1 = new Car("Yello", 2019);
+// let example2;
+
+// console.log(instanceOfCar, instanceOfCar1);
+// console.log(instanceOfCar1 instanceof Car);
+// console.log(instanceOfCar.startEngine());
+
+// console.log(instanceOfCar.__proto__);
+
+// if we don't have a Car then with the instance of contructor way would be like this below
+// console.log(instanceOfCar.__proto__.isPrototypeOf(instanceOfCar));
+// It is same
+// If we have a constructor then the way would be like this
+// console.log(Car.prototype);
+// console.log(instanceOfCar);
+
+class Car {
+  constructor(color, model) {
+    this.color = color;
+    this.model = model;
+  }
+  startEngine() {
+    console.log("This is start engine method of Car class");
+  }
+}
+
+let honda = new Car("Red", 2019);
+let suzuki = new Car("Black", 2020);
+console.log(honda, suzuki.__proto__);
