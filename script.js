@@ -148,6 +148,13 @@ class Car {
   get _startEngine() {
     console.log("This is start engine method using get");
   }
+
+  get description() {
+    return `Color of Bike is ${this.color} and its model is ${this.model}`;
+  }
+  set changeColor(color) {
+    console.log((this.color = color));
+  }
 }
 
 let honda = new Car("Red", 2019);
@@ -155,4 +162,12 @@ let suzuki = new Car("Black", 2020);
 console.log(honda, suzuki.__proto__);
 
 honda.startEngine(); //accessing as function
-honda._startEngine(); // accessing as property
+// honda._startEngine(); // accessing as property // not towrite like this one write like below one
+honda._startEngine; // accessing as property
+
+// honda.changeColor("yello"); // not to write like this, write like this below one
+
+honda.changeColor = "blue";
+console.log(honda);
+
+console.log(honda.description);
