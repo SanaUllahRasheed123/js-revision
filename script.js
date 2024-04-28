@@ -137,37 +137,128 @@
 // Getters and setters allow you to define object Accessros (Computed Properties)
 // We can also use in class
 
-class Car {
-  constructor(color, model) {
-    this.color = color;
-    this.model = model;
-  }
-  startEngine() {
-    console.log("This is start engine method of Car class");
-  }
-  get _startEngine() {
-    console.log("This is start engine method using get");
-  }
+// class Car {
+//   constructor(color, model) {
+//     this.color = color;
+//     this.model = model;
+//   }
+//   startEngine() {
+//     console.log("This is start engine method of Car class");
+//   }
+//   get _startEngine() {
+//     console.log("This is start engine method using get");
+//   }
 
-  get description() {
-    return `Color of Bike is ${this.color} and its model is ${this.model}`;
-  }
-  set changeColor(color) {
-    console.log((this.color = color));
-  }
-}
+//   get description() {
+//     return `Color of Bike is ${this.color} and its model is ${this.model}`;
+//   }
+//   set changeColor(color) {
+//     console.log((this.color = color));
+//   }
+// }
 
-let honda = new Car("Red", 2019);
-let suzuki = new Car("Black", 2020);
-console.log(honda, suzuki.__proto__);
+// let honda = new Car("Red", 2019);
+// let suzuki = new Car("Black", 2020);
+// console.log(honda, suzuki.__proto__);
 
-honda.startEngine(); //accessing as function
+// honda.startEngine(); //accessing as function
 // honda._startEngine(); // accessing as property // not towrite like this one write like below one
-honda._startEngine; // accessing as property
+// honda._startEngine; // accessing as property
 
 // honda.changeColor("yello"); // not to write like this, write like this below one
 
-honda.changeColor = "blue";
+// honda.changeColor = "blue";
+// console.log(honda);
+
+// console.log(honda.description);
+
+// static methods(methods which is not present on constructor)
+// "prototype" property but "constructor" itself
+
+// can never inherit to all objects
+// class Car {
+//   constructor(color, model) {
+//     this.color = color;
+//     this.model = model;
+//   }
+//   startEngine() {
+//     console.log("This is start engine method of Car class");
+//   }
+// }
+
+// Car.breakMethod = function () {
+//   console.log("this is static method of car");
+// };
+
+// let honda = new Car("Red", 3932);
+// // console.log(honda);
+// honda.startEngine();
+
+// Car.breakMethod();
+
+// console.log(Array.from(12.54));
+
+// 10.7 *************Inhertence*******
+
+// class Car {
+//   constructor(color, model) {
+//     this.color = color;
+//     this.model = model;
+//   }
+//   startEngine() {
+//     console.log("This is start engine method of Car class");
+//   }
+// }
+
+// class Bike extends Car {
+//   // add some new properties and "methods" as well
+//   constructor(color, model, engineCapacity) {
+//     super(color, model);
+//     this.engineCapacity = engineCapacity;
+//   }
+//   bikeMethod() {
+//     console.log("This is Method of Bike class");
+//   }
+// }
+
+// let newBike = new Bike("Black", 2023, "12C34");
+// let bike2 = new Bike("OrangeWhite", 2384, "4390C3");
+
+// console.log(newBike);
+
+// let instance = new Car("yello", 2939);
+
+// console.log(instance);
+
+// let honda = new Car("red")\
+
+// 10.7 Prototypical Inheritance(using constructor function)
+
+// parent class
+let Car = function (color, model) {
+  this.color = color;
+  this.model = model;
+};
+Car.prototype.startEngine = function () {
+  console.log("This is start Engine method");
+};
+
+let honda = new Car("Blue", 2021);
 console.log(honda);
 
-console.log(honda.description);
+// child clas
+
+let Bike = function (color, model, engineCapacity) {
+  Car.call(this, color, model);
+  this.engineCapacity = engineCapacity;
+};
+// inherited from parent class
+Bike.prototype = Object.create(Car.prototype);
+
+// Not inherited
+Bike.prototype.ownBike = function () {
+  console.log("this is own Bike class methods");
+};
+let bike1 = new Bike("Green", 2019, "200CC");
+let bike2 = new Bike("Narangi", 3290, 3298);
+console.log(bike1, bike2);
