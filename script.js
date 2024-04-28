@@ -134,6 +134,9 @@
 // console.log(Car.prototype);
 // console.log(instanceOfCar);
 
+// Getters and setters allow you to define object Accessros (Computed Properties)
+// We can also use in class
+
 class Car {
   constructor(color, model) {
     this.color = color;
@@ -142,8 +145,14 @@ class Car {
   startEngine() {
     console.log("This is start engine method of Car class");
   }
+  get _startEngine() {
+    console.log("This is start engine method using get");
+  }
 }
 
 let honda = new Car("Red", 2019);
 let suzuki = new Car("Black", 2020);
 console.log(honda, suzuki.__proto__);
+
+honda.startEngine(); //accessing as function
+honda._startEngine(); // accessing as property
