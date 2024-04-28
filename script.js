@@ -235,30 +235,64 @@
 // 10.7 Prototypical Inheritance(using constructor function)
 
 // parent class
-let Car = function (color, model) {
-  this.color = color;
-  this.model = model;
-};
-Car.prototype.startEngine = function () {
-  console.log("This is start Engine method");
-};
+// let Car = function (color, model) {
+//   this.color = color;
+//   this.model = model;
+// };
+// Car.prototype.startEngine = function () {
+//   console.log("This is start Engine method");
+// };
 
-let honda = new Car("Blue", 2021);
-console.log(honda);
+// let honda = new Car("Blue", 2021);
+// console.log(honda);
 
 // child clas
 
-let Bike = function (color, model, engineCapacity) {
-  Car.call(this, color, model);
-  this.engineCapacity = engineCapacity;
-};
+// let Bike = function (color, model, engineCapacity) {
+//   Car.call(this, color, model);
+//   this.engineCapacity = engineCapacity;
+// };
 // inherited from parent class
-Bike.prototype = Object.create(Car.prototype);
+// Bike.prototype = Object.create(Car.prototype);
 
-// Not inherited
-Bike.prototype.ownBike = function () {
-  console.log("this is own Bike class methods");
-};
-let bike1 = new Bike("Green", 2019, "200CC");
-let bike2 = new Bike("Narangi", 3290, 3298);
-console.log(bike1, bike2);
+// // Not inherited
+// Bike.prototype.ownBike = function () {
+//   console.log("this is own Bike class methods");
+// };
+// let bike1 = new Bike("Green", 2019, "200CC");
+// let bike2 = new Bike("Narangi", 3290, 3298);
+// console.log(bike1, bike2);
+
+// 10.8  *******Chaining of Methods******
+
+// Chaining methods
+
+// class declaration
+
+class bankAccount {
+  constructor(owner, pin) {
+    this.owner = owner;
+    this.pin = pin;
+    this.movements = [];
+  }
+
+  getMovements() {
+    return this.movements;
+  }
+  deposit(val) {
+    this.movements.push(val);
+    return this;
+  }
+  withdraw(val) {
+    this.deposit(-val);
+    return this;
+  }
+}
+
+let account = new bankAccount("Zack", 3838);
+
+account.deposit(434).withdraw(4223).deposit(43987);
+// account.withdraw(65);
+
+console.log(account.getMovements());
+console.log(account);
