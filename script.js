@@ -269,30 +269,72 @@
 
 // class declaration
 
-class bankAccount {
-  constructor(owner, pin) {
-    this.owner = owner;
-    this.pin = pin;
-    this.movements = [];
-  }
+// class bankAccount {
+//   constructor(owner, pin) {
+//     this.owner = owner;
+//     this.pin = pin;
+//     this.movements = [];
+//   }
 
-  getMovements() {
-    return this.movements;
-  }
-  deposit(val) {
-    this.movements.push(val);
-    return this;
-  }
-  withdraw(val) {
-    this.deposit(-val);
-    return this;
-  }
-}
+//   getMovements() {
+//     return this.movements;
+//   }
+//   deposit(val) {
+//     this.movements.push(val);
+//     return this;
+//   }
+//   withdraw(val) {
+//     this.deposit(-val);
+//     return this;
+//   }
+// }
 
-let account = new bankAccount("Zack", 3838);
+// let account = new bankAccount("Zack", 3838);
 
-account.deposit(434).withdraw(4223).deposit(43987);
-// account.withdraw(65);
+// account.deposit(434).withdraw(4223).deposit(43987);
+// // account.withdraw(65);
 
-console.log(account.getMovements());
-console.log(account);
+// console.log(account.getMovements());
+// console.log(account);
+
+// 11.1  *******Async Code******
+
+// console.log("This is clg satatement");
+// setTimeout(() => {
+//   console.log("after 3 seconds");
+// }, 3000);
+
+// 11.2  *******Makin HTTP Request (Example)******
+
+let request = new XMLHttpRequest();
+
+console.log(request), request.readyState;
+
+request.addEventListener("readystatechange", () => {
+  //   console.log(request, request.readyState);
+  if (request.readyState === 4 && request.status == 200) {
+    console.log(request.responseText);
+  }
+});
+
+// set up the request
+
+request.open("Get", "https://jsonplaceholder.typicode.com/todos");
+
+// sending the request
+
+request.send();
+
+// 0 UNSENT client has been created. open() not called
+// 1 OPENED  open() has been called
+// 2 HEADERS_RECEIVED send() has been called, and headers
+// 3 LOADING downloading; responseText holds partial data;
+// 4 DONE - The operation is completed // interested here
+
+// HTTP STATUS CODE
+
+// Informational response (100-199)
+// Successful response (200-299)
+// Redirectional messages (300-399)
+// Client error responses (400-499)
+// Server error responses (500-599)
