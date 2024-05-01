@@ -306,25 +306,6 @@
 
 // 11.2  *******Makin HTTP Request (Example)******
 
-let request = new XMLHttpRequest();
-
-console.log(request), request.readyState;
-
-request.addEventListener("readystatechange", () => {
-  //   console.log(request, request.readyState);
-  if (request.readyState === 4 && request.status == 200) {
-    console.log(request.responseText);
-  }
-});
-
-// set up the request
-
-request.open("Get", "https://jsonplaceholder.typicode.com/todos");
-
-// sending the request
-
-request.send();
-
 // 0 UNSENT client has been created. open() not called
 // 1 OPENED  open() has been called
 // 2 HEADERS_RECEIVED send() has been called, and headers
@@ -338,3 +319,120 @@ request.send();
 // Redirectional messages (300-399)
 // Client error responses (400-499)
 // Server error responses (500-599)
+
+// call back
+// call back hell
+// chain of todos
+
+// let todos = ((resource) => {
+//   return request = new XMLHttpRequest();
+
+//   console.log(request), request.readyState;
+
+//   request.addEventListener("readystatechange", () => {
+//     //   console.log(request, request.readyState);
+//     if (request.readyState === 4 && request.status == 200) {
+//       // console.log(request.responseText);
+//       let data = JSON.parse(request.responseText);
+//       resolve(data)
+//       // callback(undefined, data); // regular js objects
+//     } else if (request.readyState === 4) {
+//       // console.log("Data could not fetch");
+//       // callback("Data could not be fetched", undefined);
+//       reject("Error in fetching")
+//     }
+//   });
+
+//   // set up the request
+
+//   // request.open("Get", "https://jsonplaceholder.typicode.com/todos");
+//   request.open("Get", resource);
+
+//   // sending the request
+
+//   request.send();
+// };
+
+// todos
+
+// todos("data.json", (error, Data) => {
+//   // console.log("callback function is fired");
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log(Data);
+//   }
+//   todos("mario.json", (error, Data) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log(Data);
+//     }
+//     todos("lurie.json", (error, Data) => {
+//       if (error) {
+//         console.log(error);
+//       } else {
+//         console.log(Data);
+//       }
+//     });
+//   });
+// });
+
+// Primises General Exaple
+
+// let getSomething = () => {
+//   return new Promise((resolve, reject) => {
+//     // resolve("Some data");
+//     reject("some error");
+//   });
+// };
+
+// getSomething()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// todos = ((resources)) => {
+//   let request = new XMLHttpRequest();
+
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status == 200) {
+//       let data = JSON.parse(request.responseText);
+//       resolve(data);
+//     } else if (request.readyState === 4) {
+//       reject("Error in Fetching the data");
+//     }
+//   });
+
+// setting up the request
+//   request.open("Get", resources);
+
+//   // sending the request
+//   request.send();
+
+// };
+
+// todos("data.json")
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// fetch API
+
+fetch("data.json")
+  .then((response) => {
+    console.log("Promise resolved", response);
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
