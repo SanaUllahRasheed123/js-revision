@@ -425,14 +425,75 @@
 
 // fetch API
 
-fetch("data.json")
-  .then((response) => {
-    console.log("Promise resolved", response);
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// fetch("data.json")
+//   .then((response) => {
+//     console.log("Promise resolved", response);
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// async and await fetch(thorowring custom error)
+
+// let getTodos = async () => {
+//   let response = await fetch("data.json");
+//   // custoem error
+//   if (response.status !== 200) {
+//     throw new Error("Custom:Error in fetching the data");
+//   }
+//   let data = await response.json();
+//   return data;
+// };
+
+// getTodos()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error.message);
+//   });
+
+// let suppose we want to get more than one data
+
+// let getTodos = async () => {
+//   let response = await fetch("data.json");
+//   let data = await response.json();
+
+//   let response2 = await fetch("mario.json");
+//   let marioData = await response2.json();
+
+// returning the data from async await function
+// return data;
+// return marioData;
+//   console.log(data, marioData);
+// };
+
+// we don't need to chain anything as previously
+// getTodos();
+// .then((data) => {
+//   // promise using then method
+//   console.log(data);
+// })
+// .catch((error) => {
+//   // this is how we handle rejected promise
+//   // using catch method
+//   console.log(error);
+// });
+
+// Error handling usign Try Catch Method
+
+let getTodos = async () => {
+  let response = await fetch("data.json");
+  let data = await response.json();
+
+  let response2 = await fetch("mario.json");
+  let data2 = await response2.json();
+
+  console.log(data, data2);
+};
+
+getTodos();
