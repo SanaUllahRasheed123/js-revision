@@ -487,13 +487,25 @@
 // Error handling usign Try Catch Method
 
 let getTodos = async () => {
-  let response = await fetch("data.json");
-  let data = await response.json();
+  try {
+    let response = await fetch("data.jsdon");
+    let data = await response.json();
 
-  let response2 = await fetch("mario.json");
-  let data2 = await response2.json();
+    let response2 = await fetch("mario.json");
+    let data2 = await response2.json();
 
-  console.log(data, data2);
+    console.log(data, data);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 getTodos();
+
+// try {
+//   let x = 4;
+//   const y = 6;
+//   y = x;
+// } catch (error) {
+//   console.log(error.message);
+// }
