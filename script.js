@@ -486,21 +486,21 @@
 
 // Error handling usign Try Catch Method
 
-let getTodos = async () => {
-  try {
-    let response = await fetch("data.jsdon");
-    let data = await response.json();
+// let getTodos = async () => {
+//   try {
+//     let response = await fetch("data.jsdon");
+//     let data = await response.json();
 
-    let response2 = await fetch("mario.json");
-    let data2 = await response2.json();
+//     let response2 = await fetch("mario.json");
+//     let data2 = await response2.json();
 
-    console.log(data, data);
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     console.log(data, data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 
-getTodos();
+// getTodos();
 
 // try {
 //   let x = 4;
@@ -509,3 +509,234 @@ getTodos();
 // } catch (error) {
 //   console.log(error.message);
 // }
+
+// Destructuring of Arrays
+
+// let hotel = {
+//   name: "hottell",
+//   name: "street no xyz Delhi",
+//   categories: ["Chinese", "Italian", "English"],
+// };
+
+// simple example without
+
+let items = [2, 3, 4, 5];
+
+// let x = items[0];
+// let y = items[1];
+// let z = items[2];
+// let p = items[3];
+
+// console.log(x, y, z, p);
+
+// with destructuring
+// let [x, y, z, p] = items;
+// console.log(x, y, z, p);
+
+// let [first, , third] = hotel.categories;
+
+// console.log(first, third);
+
+// switch the category(usecase)
+
+// without destructuring
+
+// let [main, secondary] = hotel.categories;
+
+// let temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+// [secondary, main] = [main, secondary];
+
+// console.log(main, secondary);
+
+// let nums = [2, 3, [4, 6]];
+// let [a, , b] = nums;
+// let [a, , [b, c]] = nums;
+// console.log(a, b, c);
+
+// Destructuring of "Objects"
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   openingHours: {
+//     sunday: { open: "09:00AM", close: "11:00PM" },
+//     monday: { open: "10:00AM", close: "10:00PM" },
+//   },
+// };
+
+// let { name, Location, mainMenu } = hotel;
+// console.log(name, Location, mainMenu);
+
+// set the customize name to objects property
+// let { name: hotelName, Location: hotelLocation, mainMenu: Menu } = hotel;
+// console.log(hotelName, hotelLocation, Menu);
+
+// let { name: hotelName, Menu = [], categories = [] } = hotel;
+// console.log(name, Menu, categories);
+
+// Destructuring Nested Objects
+
+// let { name, openingHours } = hotel;
+// console.log(name, openingHours);
+
+// let {
+//   sunday: { open, close },
+// } = openingHours;
+// console.log(open, close);
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   openingHours: {
+//     sunday: { open: "09:00AM", close: "11:00PM" },
+//     monday: { open: "10:00AM", close: "10:00PM" },
+//   },
+// };
+
+// let nums = [2, 3, 4, 5];
+// console.log(...nums);
+
+// usecase
+// let newArray = [9, 29, ...nums];
+// console.log(newArray, nums);
+
+// let updateMainMenu = [...hotel.mainMenu, "FoodD", "FoodE"];
+// console.log(updateMainMenu);
+
+// deep copy
+
+// let copyArray = updateMainMenu; //reference
+// copyArray[1] = "new Food";
+
+// create shallow copy using spread operator
+// console.log(copyArray);
+// console.log(updateMainMenu);
+
+// we can also use sprea operator on strings
+
+// let passion = "Programming";
+// console.log(...passion);
+
+// same as
+
+// console.log("p", "r", "o", "g", "r", "a", "m", "m", "i", "n", "g");
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   openingHours: {
+//     sunday: { open: "09:00AM", close: "11:00PM" },
+//     monday: { open: "10:00AM", close: "10:00PM" },
+//   },
+// };
+
+// spread(...)operator it is present in the RHS of =
+
+// let nums = [2, 3, 4, 5, 6];
+// let newArray = [1, ...nums];
+// console.log(newArray);
+
+// Syntax of REST(...) Get elements and packed them into array
+// use in LHS
+
+// let [a, ...others] = nums;
+// console.log(others);
+
+// short circuiting
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   openingHours: {
+//     sunday: { open: "09:00AM", close: "11:00PM" },
+//     monday: { open: "10:00AM", close: "10:00PM" },
+//   },
+// };
+
+// Fasly value => 0,false, null, undefined, '' (empty string)
+
+// AND (&&) operator (Output true if all input true)
+
+// let result = "programmers" && "coders";
+// console.log(result);
+
+// OR(||) operator (Output true if any given input true)
+
+// let result = "programmers" || "coders";
+// console.log(result);
+
+//  As || operator find first output true. It simply return that
+// true value and does not move towards next operands
+
+// Nullish coalesing operator (??) only 'null' and 'undefined' are false value
+
+// let numGuests = 0;
+// let result = numGuests || 10;
+// console.log(result);
+
+// let result2 = numGuests ?? 10;
+// console.log(result2); // 0 is not nullish value
+
+// for of loop
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
+//   openingHours: {
+//     sunday: { open: "09:00AM", close: "11:00PM" },
+//     monday: { open: "10:00AM", close: "10:00PM" },
+//   },
+// };
+
+// let menu = [...hotel.mainMenu, ...hotel.startMenu];
+// console.log(menu);
+
+// // if only value
+// for (let elem of menu) console.log(elem);
+
+// // if we want both index as well as value
+// for (let [i, items] of menu.entries()) {
+//   console.log(`${i + 1}:${items}`);
+// }
+
+// Enhanced Object Literal
+
+// Before ES6 Vs After Es6
+// we can use computed property name
+
+openingHours = {
+  sunday: { open: "09:00AM", close: "11:00PM" },
+  monday: { open: "10:00AM", close: "10:00PM" },
+  tuesday: { open: "10:00AM", close: "10:00PM" },
+};
+let menuType = "plantinumMenu";
+
+let hotel = {
+  name: "hotelzyu",
+  Location: "street no xyz Delhi",
+  categories: ["Chinsese", "Italia", "English"],
+  mainMenu: ["FoodA", "FoodB", "FoodC"],
+  startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
+  openingHours,
+  orser: function () {
+    console.log("This is object function");
+  },
+
+  [menuType]: ["Different Food item"],
+};
+
+console.log(hotel);
