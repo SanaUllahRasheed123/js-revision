@@ -748,6 +748,38 @@ let items = [2, 3, 4, 5];
 // };
 // let menuType = "plantinumMenu";
 
+// openingHours = {
+//   sunday: { open: "09:00AM", close: "11:00PM" },
+//   monday: { open: "10:00AM", close: "10:00PM" },
+//   tuesday: { open: "10:00AM", close: "10:00PM" },
+//   saturday: { open: "09:00AM", close: "6:00PM" },
+// };
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
+//   openingHours,
+// };
+
+// Let suppose we want to check this hotel open on saturday or not
+// if open then at what  time
+
+// console.log(hotel.openingHours.tuesday.open);
+
+// To avoid this error two methods
+// without optional chaining
+
+// if (hotel.openingHours && hotel.openingHours.saturday) {
+//   console.log(hotel.openingHours.saturday.close);
+// }
+
+// with optional chaining
+
+// console.log(hotel.openingHours?.saturday?.open);
+
 openingHours = {
   sunday: { open: "09:00AM", close: "11:00PM" },
   monday: { open: "10:00AM", close: "10:00PM" },
@@ -764,18 +796,27 @@ let hotel = {
   openingHours,
 };
 
-// Let suppose we want to check this hotel open on saturday or not
-// if open then at what  time
+// Keys(properties)
 
-// console.log(hotel.openingHours.tuesday.open);
+let properties = Object.keys(openingHours);
+console.log(properties);
 
-// To avoid this error two methods
-// without optional chaining
+// we know how to loop over array
 
-if (hotel.openingHours && hotel.openingHours.saturday) {
-  console.log(hotel.openingHours.saturday.close);
+for (let key of properties) {
+  console.log(key);
 }
 
-// with optional chaining
+// values
 
-console.log(hotel.openingHours?.saturday?.open);
+let values = Object.values(openingHours);
+console.log(values);
+
+// complete objects
+
+let entries = Object.entries(openingHours);
+
+// console.log(entries);
+for (let [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
