@@ -520,7 +520,7 @@
 
 // simple example without
 
-let items = [2, 3, 4, 5];
+// let items = [2, 3, 4, 5];
 
 // let x = items[0];
 // let y = items[1];
@@ -780,6 +780,48 @@ let items = [2, 3, 4, 5];
 
 // console.log(hotel.openingHours?.saturday?.open);
 
+// openingHours = {
+//   sunday: { open: "09:00AM", close: "11:00PM" },
+//   monday: { open: "10:00AM", close: "10:00PM" },
+//   tuesday: { open: "10:00AM", close: "10:00PM" },
+//   saturday: { open: "09:00AM", close: "6:00PM" },
+// };
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
+//   openingHours,
+// };
+
+// Keys(properties)
+
+// let properties = Object.keys(openingHours);
+// console.log(properties);
+
+// we know how to loop over array
+
+// for (let key of properties) {
+//   console.log(key);
+// }
+
+// values
+
+// let values = Object.values(openingHours);
+// console.log(values);
+
+// complete objects
+
+// let entries = Object.entries(openingHours);
+
+// console.log(entries);
+// for (let [day, { open, close }] of entries) {
+//   console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
+
+// Data sets
 openingHours = {
   sunday: { open: "09:00AM", close: "11:00PM" },
   monday: { open: "10:00AM", close: "10:00PM" },
@@ -796,27 +838,21 @@ let hotel = {
   openingHours,
 };
 
-// Keys(properties)
+//example
+// indexing not allowed
 
-let properties = Object.keys(openingHours);
-console.log(properties);
+// let itemSet = new Set([1, 2, 3, 4, 2, 3, 4, 5, 7, 8]);
+let itemSet = new Set("SanaUllah");
 
-// we know how to loop over array
+// console.log(itemSet);
+// console.log(itemSet.size);
+// console.log(itemSet.has(98));
+// console.log(itemSet.add(98));
+// console.log(itemSet.has(98));
+// console.log(itemSet.delete(98));
 
-for (let key of properties) {
-  console.log(key);
-}
+// set are also iterables
 
-// values
-
-let values = Object.values(openingHours);
-console.log(values);
-
-// complete objects
-
-let entries = Object.entries(openingHours);
-
-// console.log(entries);
-for (let [day, { open, close }] of entries) {
-  console.log(`On ${day} we open at ${open} and close at ${close}`);
+for (let item of itemSet) {
+  console.log(item);
 }
