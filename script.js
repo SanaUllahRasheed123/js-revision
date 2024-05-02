@@ -718,12 +718,42 @@ let items = [2, 3, 4, 5];
 // Before ES6 Vs After Es6
 // we can use computed property name
 
+// openingHours = {
+//   sunday: { open: "09:00AM", close: "11:00PM" },
+//   monday: { open: "10:00AM", close: "10:00PM" },
+//   tuesday: { open: "10:00AM", close: "10:00PM" },
+// };
+// let menuType = "plantinumMenu";
+
+// let hotel = {
+//   name: "hotelzyu",
+//   Location: "street no xyz Delhi",
+//   categories: ["Chinsese", "Italia", "English"],
+//   mainMenu: ["FoodA", "FoodB", "FoodC"],
+//   startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
+//   openingHours,
+//   orser: function () {
+//     console.log("This is object function");
+//   },
+
+//   [menuType]: ["Different Food item"],
+// };
+
+// console.log(hotel);
+
+// openingHours = {
+//   sunday: { open: "09:00AM", close: "11:00PM" },
+//   monday: { open: "10:00AM", close: "10:00PM" },
+//   tuesday: { open: "10:00AM", close: "10:00PM" },
+// };
+// let menuType = "plantinumMenu";
+
 openingHours = {
   sunday: { open: "09:00AM", close: "11:00PM" },
   monday: { open: "10:00AM", close: "10:00PM" },
   tuesday: { open: "10:00AM", close: "10:00PM" },
+  saturday: { open: "09:00AM", close: "6:00PM" },
 };
-let menuType = "plantinumMenu";
 
 let hotel = {
   name: "hotelzyu",
@@ -732,11 +762,20 @@ let hotel = {
   mainMenu: ["FoodA", "FoodB", "FoodC"],
   startMenu: ["Wada Ghost", "Chota Ghost", "Gobi"],
   openingHours,
-  orser: function () {
-    console.log("This is object function");
-  },
-
-  [menuType]: ["Different Food item"],
 };
 
-console.log(hotel);
+// Let suppose we want to check this hotel open on saturday or not
+// if open then at what  time
+
+// console.log(hotel.openingHours.tuesday.open);
+
+// To avoid this error two methods
+// without optional chaining
+
+if (hotel.openingHours && hotel.openingHours.saturday) {
+  console.log(hotel.openingHours.saturday.close);
+}
+
+// with optional chaining
+
+console.log(hotel.openingHours?.saturday?.open);
